@@ -1,0 +1,52 @@
+{
+	"admin": {},
+	"logging": {},
+	"apps": {
+		"http": {
+			"servers": {
+				"download": {
+					"listen": [
+						":80"
+					],
+					"automatic_https": {
+						"disable": true
+					},
+					"routes": [
+						{
+							"handle": [
+								{
+									"handler": "file_server",
+									"root": "D:/",
+									"browse": {
+										"template_file": "./template.html"
+									}
+								}
+							]
+						}
+					]
+				},
+				"f_drive": {
+					"listen": [
+						":81"
+					],
+					"automatic_https": {
+						"disable": true
+					},
+					"routes": [
+						{
+							"handle": [
+								{
+									"handler": "file_server",
+									"root": "F:/",
+									"browse": {
+										"template_file": "./template.html"
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	}
+}
